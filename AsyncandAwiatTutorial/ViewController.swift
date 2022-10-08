@@ -15,10 +15,11 @@ var arrUser = [User]()
     @IBOutlet weak var tables: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task.init {
+        Task.init { // async has deprecated
             let users = await fetchUserdata()
             self.arrUser = users
             tables.reloadData()
+            
         }
         // Do any additional setup after loading the view.
     }
